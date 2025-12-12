@@ -1,0 +1,202 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "reload_style_on_change": true,
+
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        // "custom/cava_mviz",
+        // "custom/playerctl",
+        // "custom/separator",
+        "tray",
+        "custom/separator",
+        "custom/twingate",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "battery",
+        "custom/separator",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "\uf31b ",
+        "tooltip": false,
+        "on-click": "bash /home/lvcas/.config/hypr/scripts/CygnusUbuntuMenu.sh"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "active-only": false,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    "clock": {
+        "format": " {:%H:%M - %A, %d-%m-%Y}",
+        "format-alt": " {:%A, %d-%m-%Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#c0caf5'><b>{}</b></span>",
+                "days": "<span color='#a9b1d6'>{}</span>",
+                "weeks": "<span color='#9ece6a'>W{}</span>",
+                "weekdays": "<span color='#7aa2f7'>{}</span>",
+                "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "\uf028 {volume}%",
+        "format-bluetooth": "\uf294 {volume}%",
+        "format-muted": "\uf6a9 muted",
+        "format-icons": {
+            "headphone": "\uf025",
+            "hands-free": "\uf025",
+            "headset": "\uf025",
+            "phone": "\uf095",
+            "portable": "\uf095",
+            "car": "\uf1b9",
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "{desc}\n{volume}%"
+    },
+
+    "network": {
+        "format-wifi": "\uf1eb {signalStrength}%",
+        "format-ethernet": "\uf6ff",
+        "format-disconnected": "\uf127",
+        "tooltip-format-wifi": "{essid}\n{ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor",
+        "interval": 5
+    },
+
+    "cpu": {
+        "format": "\uf2db {usage}%",
+        "tooltip-format": "CPU: {usage}%\nLoad: {load}",
+        "interval": 2,
+        "on-click": "wezterm start -- btop"
+    },
+
+    "memory": {
+        "format": "\uefc5 {percentage}%",
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB\nSwap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB",
+        "interval": 5,
+        "on-click": "wezterm start -- btop"
+    },
+
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "\uf0e7 {capacity}%",
+        "format-plugged": "\uf1e6 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "tooltip-format": "{timeTo}\nPower: {power}W"
+    },
+
+    "bluetooth": {
+        "format": "\uf293",
+        "format-connected": "\uf293 {device_alias}",
+        "format-connected-battery": "\uf293 {device_alias} {device_battery_percentage}%",
+        "format-disabled": "",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": true,
+        "tooltip-format": "Power Menu",
+        "on-click": "bash /home/lvcas/.config/hypr/scripts/CygnusUbuntuPowerMenu.sh"
+    },
+
+    "custom/twingate": {
+        "format": "󰦝",
+        "return-type": "json",
+        "exec": "$HOME/.config/hypr/scripts/Twingate.sh status",
+        "on-click": "$HOME/.config/hypr/scripts/Twingate.sh toggle",
+        "on-click-right": "$HOME/.config/hypr/scripts/Twingate.sh stop",
+        "interval": 3,
+        "tooltip": true
+    },
+
+    "custom/cava_mviz": {
+        "exec": "$HOME/.config/hypr/scripts/WaybarCava.sh",
+        "format": "{}"
+    },
+
+    "custom/playerctl": {
+        "format": "<span>{}</span>",
+        "return-type": "json",
+        "max-length": 25,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}}: {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click-middle": "playerctl play-pause",
+        "on-click": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "smooth-scrolling-threshold": 1
+    }
+}

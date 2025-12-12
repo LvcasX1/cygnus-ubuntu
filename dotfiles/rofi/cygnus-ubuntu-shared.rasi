@@ -1,0 +1,107 @@
+/* Cygnus-Ubuntu shared color palette */
+/* Matching Waybar Tokyo Night theme */
+
+* {
+    /* Tokyo Night colors matching waybar */
+    cygnus-bg: rgba(26, 27, 38, 0.85);
+    cygnus-bg-alt: rgba(41, 46, 66, 0.9);
+    cygnus-fg: #c0caf5;
+    cygnus-fg-dark: #a9b1d6;
+    cygnus-blue: #7aa2f7;
+    cygnus-selected: rgba(122, 162, 247, 0.3);
+    cygnus-border: rgba(122, 162, 247, 0.3);
+    selected-normal-background: rgba(122, 162, 247, 0.3);
+    selected-normal-foreground: #c0caf5;
+}
+
+configuration {
+    kb-row-down: "Down,j";
+    kb-row-up: "Up,k";
+}
+
+window {
+    transparency: "real";
+    background-color: @cygnus-bg;
+    border: 1px solid;
+    border-color: @cygnus-border;
+    border-radius: 12px;
+}
+
+mainbox {
+    background-color: transparent;
+}
+
+inputbar {
+    background-color: transparent;
+}
+
+entry {
+    background-color: @cygnus-bg-alt;
+    text-color: @cygnus-fg;
+    padding: 10px 14px;
+    border-radius: 8px;
+    placeholder-color: @cygnus-fg-dark;
+}
+
+listview {
+    background-color: transparent;
+    dynamic: true;
+}
+
+element {
+    background-color: transparent;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @cygnus-fg;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @cygnus-selected;
+    text-color: @cygnus-fg;
+    border-radius: 8px;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: none;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+element-text selected {
+    background-color: transparent;
+    text-color: @cygnus-fg;
+    highlight: none;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    background-color: @cygnus-bg-alt;
+    text-color: @cygnus-fg;
+}
+
+mode-switcher {
+    background-color: transparent;
+}
+
+button {
+    background-color: transparent;
+    text-color: @cygnus-fg;
+}
+
+button selected {
+    background-color: @cygnus-selected;
+    text-color: @cygnus-fg;
+}

@@ -1,0 +1,40 @@
+/* Cygnus-Ubuntu Wallpaper Picker */
+@import "~/.config/rofi/config.rasi"
+@import "~/.config/rofi/cygnus-ubuntu-shared.rasi"
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    width: 700px;
+    location: center;
+    border-radius: 12px;
+}
+
+mainbox {
+    children: ["listview"];
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+    spacing: 4px;
+    padding: 8px;
+}
+
+element {
+    padding: 8px 14px;
+    orientation: horizontal;
+    spacing: 15px;
+    border-radius: 8px;
+}
+
+element-icon {
+    size: 120px;
+    border-radius: 6px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

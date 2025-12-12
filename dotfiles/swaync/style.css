@@ -1,0 +1,327 @@
+/* Omarchy-style notifications */
+
+@define-color omarchy-bg rgba(40, 50, 80, 0.95);
+@define-color omarchy-bg-alt rgba(255, 255, 255, 0.1);
+@define-color omarchy-fg #ffffff;
+@define-color omarchy-selected rgba(122, 162, 247, 0.3);
+@define-color omarchy-border rgba(122, 162, 247, 0.5);
+@define-color omarchy-close #f7768e;
+
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    opacity: 1;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.notification-row {
+    outline: none;
+    background: transparent;
+}
+
+.notification {
+    background: @omarchy-bg;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid @omarchy-border;
+    color: @omarchy-fg;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+}
+
+.close-button {
+    background: @omarchy-close;
+    color: @omarchy-bg;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.close-button:hover {
+    box-shadow: none;
+    background: @omarchy-close;
+    transition: all .15s ease-in-out;
+    border: none;
+}
+
+.notification-action {
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: @omarchy-fg;
+    background: transparent;
+}
+
+.notification-default-action:not(:only-child) {
+    border-radius: 0;
+}
+
+.notification-action:first-child {
+    border-radius: 10px;
+    background: transparent;
+}
+
+.notification-action:last-child {
+    border-radius: 10px;
+    background: transparent;
+}
+
+.inline-reply {
+    margin-top: 8px;
+}
+
+.inline-reply-entry {
+    background: @omarchy-bg;
+    color: @omarchy-fg;
+    caret-color: @omarchy-fg;
+    border: 1px solid @omarchy-border;
+    border-radius: 10px;
+}
+
+.inline-reply-button {
+    font-size: 0.5rem;
+    margin-left: 4px;
+    background: @omarchy-bg;
+    border: 1px solid @omarchy-border;
+    border-radius: 10px;
+    color: @omarchy-fg;
+}
+
+.inline-reply-button:disabled {
+    background: initial;
+    color: @omarchy-fg;
+    border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+    background: @omarchy-selected;
+}
+
+.body-image {
+    margin-top: 6px;
+    color: @omarchy-fg;
+    border-radius: 10px;
+}
+
+.summary {
+    font-size: 1rem;
+    font-weight: bold;
+    background: transparent;
+    color: @omarchy-fg;
+    text-shadow: none;
+}
+
+.time {
+    font-size: 1rem;
+    font-weight: bold;
+    background: transparent;
+    color: @omarchy-fg;
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.body {
+    font-size: 1rem;
+    font-weight: bold;
+    background: transparent;
+    color: @omarchy-fg;
+    text-shadow: none;
+}
+
+.control-center {
+    background: @omarchy-bg;
+    border: 2px solid @omarchy-border;
+    color: @omarchy-fg;
+    border-radius: 10px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: alpha(black, 0.1);
+}
+
+.widget-title {
+    color: @omarchy-fg;
+    background: @omarchy-bg-alt;
+    padding: 3px 6px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.widget-title>button {
+    font-size: 0.75rem;
+    color: @omarchy-fg;
+    border-radius: 10px;
+    background: transparent;
+    border: 0.5px solid @omarchy-border;
+}
+
+/* clear button */
+.widget-title>button:hover {
+    background: @omarchy-fg;
+    color: @omarchy-close;
+}
+
+.widget-dnd {
+    background: @omarchy-bg-alt;
+    padding: 3px 6px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 0.5rem;
+    color: @omarchy-border;
+}
+
+.widget-dnd>switch {
+    border-radius: 10px;
+    border: 1px solid @omarchy-border;
+    background: @omarchy-border;
+}
+
+.widget-dnd>switch:checked {
+    background: @omarchy-close;
+    border: 1px solid @omarchy-close;
+}
+
+.widget-dnd>switch slider {
+    background: @omarchy-bg;
+    border-radius: 10px;
+}
+
+.widget-dnd>switch:checked slider {
+    background: @omarchy-bg;
+    border-radius: 10px;
+}
+
+.widget-label {
+    margin: 5px;
+}
+
+.widget-label>label {
+    font-size: 1rem;
+    color: @omarchy-fg;
+}
+
+.widget-mpris {
+    color: @omarchy-fg;
+    background: @omarchy-bg;
+    padding: 3px 6px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.widget-mpris > box > button {
+    border-radius: 10px;
+}
+
+.widget-mpris-player {
+    padding: 3px 6px;
+    margin: 5px;
+}
+
+.widget-mpris-title {
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 0.75rem;
+}
+
+.widget-buttons-grid {
+    font-size: large;
+    color: @omarchy-border;
+    padding: 2px;
+    margin: 5px;
+    border-radius: 10px;
+    background: @omarchy-bg-alt;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 1px;
+    background: @omarchy-bg;
+    border-radius: 10px;
+    color: @omarchy-fg;
+}
+
+/* individual buttons */
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @omarchy-fg;
+    color: @omarchy-bg;
+}
+
+.widget-menubar>box>.menu-button-bar>button {
+    border: none;
+    background: transparent;
+}
+
+.topbar-buttons>button {
+    border: none;
+    background: transparent;
+}
+
+.widget-volume {
+    background: @omarchy-bg-alt;
+    padding: 2px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 10px;
+    font-size: x-large;
+    color: @omarchy-fg;
+}
+
+.widget-volume>box>button {
+    background: @omarchy-border;
+    border: none;
+}
+
+.per-app-volume {
+    background-color: @omarchy-bg;
+    padding: 4px 8px 8px;
+    margin: 0 8px 8px;
+    border-radius: 10px;
+    color: @omarchy-fg;
+}
+
+.widget-backlight {
+    background: @omarchy-bg-alt;
+    padding: 5px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 10px;
+    font-size: x-large;
+    color: @omarchy-fg;
+}

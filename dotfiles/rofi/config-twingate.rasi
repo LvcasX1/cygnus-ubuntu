@@ -1,0 +1,51 @@
+/* Twingate Password Prompt - Omarchy Style */
+
+@import "~/.config/rofi/cygnus-ubuntu-shared.rasi"
+
+configuration {
+    show-icons:                 false;
+    hover-select:               false;
+}
+
+window {
+    transparency:               "real";
+    location:                   center;
+    anchor:                     center;
+    width:                      300px;
+    border-radius:              10px;
+    background-color:           @omarchy-bg;
+}
+
+mainbox {
+    background-color:           transparent;
+    padding:                    20px;
+    children:                   [ "inputbar" ];
+}
+
+inputbar {
+    background-color:           @omarchy-bg-alt;
+    children:                   [ "textbox-prompt-colon", "entry" ];
+    spacing:                    0px;
+    border-radius:              8px;
+    padding:                    0px;
+}
+
+textbox-prompt-colon {
+    expand:                     false;
+    str:                        " 󰖂 ";
+    background-color:           transparent;
+    text-color:                 @omarchy-fg;
+    padding:                    10px 0px 10px 14px;
+}
+
+entry {
+    background-color:           transparent;
+    text-color:                 @omarchy-fg;
+    padding:                    10px 14px 10px 8px;
+    placeholder:                "Password";
+    placeholder-color:          rgba(255, 255, 255, 0.5);
+}
+
+listview {
+    enabled:                    false;
+}

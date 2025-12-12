@@ -1,0 +1,52 @@
+/* Cygnus-Ubuntu App Launcher - Dynamic height */
+@import "~/.config/rofi/config.rasi"
+@import "~/.config/rofi/cygnus-ubuntu-shared.rasi"
+
+configuration {
+    hover-select: false;
+    show-icons: true;
+    drun-display-format: "{name}";
+}
+
+window {
+    width: 500px;
+    location: center;
+    border-radius: 12px;
+}
+
+mainbox {
+    children: ["inputbar", "listview"];
+    spacing: 0px;
+}
+
+inputbar {
+    children: ["entry"];
+    padding: 14px;
+}
+
+entry {
+    placeholder: "Search apps...";
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 5;
+    dynamic: true;
+    fixed-height: false;
+    fixed-columns: true;
+    spacing: 4px;
+    padding: 0 8px 8px 8px;
+    scrollbar: false;
+    require-input: true;
+}
+
+element {
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+element-icon {
+    size: 22px;
+    margin: 0 10px 0 0;
+}

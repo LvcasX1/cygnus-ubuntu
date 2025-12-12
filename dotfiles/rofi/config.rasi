@@ -1,0 +1,16 @@
+/* Cygnus-Ubuntu Rofi Configuration */
+
+configuration {
+    modi: "drun,run,window,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "JetBrainsMono Nerd Font 11";
+    drun-display-format: "{name}";
+    hover-select: true;
+    scroll-method: 1;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+/* Import shared fonts */
+@import "~/.config/rofi/0-shared-fonts.rasi"

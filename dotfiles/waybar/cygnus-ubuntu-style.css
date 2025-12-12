@@ -1,0 +1,304 @@
+/* Cygnus-Ubuntu Waybar CSS */
+/* Theme: Tokyo Night */
+/* Based on https://github.com/basecamp/omarchy */
+
+/* Tokyo Night Color Palette */
+@define-color bg #1a1b26;
+@define-color bg-dark #16161e;
+@define-color bg-highlight #292e42;
+@define-color fg #c0caf5;
+@define-color fg-dark #a9b1d6;
+@define-color fg-gutter #3b4261;
+@define-color blue #7aa2f7;
+@define-color cyan #7dcfff;
+@define-color magenta #bb9af7;
+@define-color purple #9d7cd8;
+@define-color orange #ff9e64;
+@define-color yellow #e0af68;
+@define-color green #9ece6a;
+@define-color teal #1abc9c;
+@define-color red #f7768e;
+@define-color comment #565f89;
+
+/* Global Styles */
+* {
+    font-family: "JetBrainsMono NF", "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* Main bar */
+window#waybar {
+    background: transparent;
+    color: @fg;
+}
+
+window#waybar > box {
+    background: alpha(@bg, 0.85);
+    border-radius: 12px;
+    border: 1px solid alpha(@blue, 0.3);
+}
+
+/* Tooltips */
+tooltip {
+    background: @bg-dark;
+    border: 1px solid @blue;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 4px 8px;
+}
+
+/* Module spacing */
+#custom-launcher,
+#workspaces,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#bluetooth {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+/* Launcher button */
+#custom-launcher {
+    font-size: 16px;
+    color: @blue;
+    padding: 0 14px;
+    margin-left: 4px;
+}
+
+#custom-launcher:hover {
+    background: alpha(@blue, 0.2);
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: @comment;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.2s ease;
+    min-width: 24px;
+}
+
+#workspaces button:hover {
+    background: alpha(@fg-gutter, 0.5);
+    color: @fg;
+}
+
+#workspaces button.active {
+    background: alpha(@blue, 0.3);
+    color: @blue;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: alpha(@red, 0.3);
+    color: @red;
+}
+
+#workspaces button.empty {
+    color: @comment;
+}
+
+#workspaces button.active.empty {
+    color: @blue;
+}
+
+/* Clock */
+#clock {
+    color: @fg;
+    font-weight: 600;
+}
+
+#clock:hover {
+    background: alpha(@purple, 0.2);
+    color: @purple;
+}
+
+/* Separator */
+#custom-separator {
+    color: @fg-gutter;
+    padding: 0 2px;
+    font-size: 10px;
+}
+
+/* System tray */
+#tray {
+    padding: 0 8px;
+    margin-right: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* Audio */
+#pulseaudio {
+    color: @cyan;
+}
+
+#pulseaudio:hover {
+    background: alpha(@cyan, 0.2);
+}
+
+#pulseaudio.muted {
+    color: @comment;
+}
+
+/* Network */
+#network {
+    color: @green;
+}
+
+#network:hover {
+    background: alpha(@green, 0.2);
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#network.wifi {
+    color: @green;
+}
+
+/* CPU */
+#cpu {
+    color: @orange;
+}
+
+#cpu:hover {
+    background: alpha(@orange, 0.2);
+}
+
+/* Memory */
+#memory {
+    color: @magenta;
+}
+
+#memory:hover {
+    background: alpha(@magenta, 0.2);
+}
+
+/* Battery */
+#battery {
+    color: @green;
+}
+
+#battery:hover {
+    background: alpha(@green, 0.2);
+}
+
+#battery.charging {
+    color: @yellow;
+}
+
+#battery.plugged {
+    color: @teal;
+}
+
+#battery.warning:not(.charging) {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to {
+        color: @fg;
+    }
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: @blue;
+}
+
+#bluetooth:hover {
+    background: alpha(@blue, 0.2);
+}
+
+#bluetooth.disabled {
+    color: @comment;
+}
+
+#bluetooth.connected {
+    color: @cyan;
+}
+
+/* Power button */
+#custom-power {
+    color: @red;
+    padding: 0 14px;
+    margin-right: 4px;
+}
+
+#custom-power:hover {
+    background: alpha(@red, 0.2);
+    border-radius: 8px;
+}
+
+/* Hover effects for all modules */
+#custom-launcher:hover,
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#bluetooth:hover {
+    border-radius: 8px;
+}
+
+/* Twingate VPN */
+#custom-twingate {
+    font-size: 16px;
+    padding: 0 13px 0 9px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#custom-twingate.connected {
+    color: @green;
+}
+
+#custom-twingate.connecting {
+    color: @yellow;
+}
+
+#custom-twingate.disconnected {
+    color: @red;
+}
+
+#custom-twingate:hover {
+    background: alpha(@green, 0.2);
+    border-radius: 8px;
+}
