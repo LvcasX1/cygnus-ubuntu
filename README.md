@@ -1,5 +1,7 @@
 # Cygnus-Ubuntu
 
+![Cygnus-Ubuntu Screenshot](screenshot.jpg)
+
 A curated Hyprland desktop environment for Ubuntu 24.04, combining the best configurations and scripts from multiple sources into a cohesive, opinionated setup.
 
 ![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-blue)
