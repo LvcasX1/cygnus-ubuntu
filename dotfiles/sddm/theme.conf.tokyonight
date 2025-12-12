@@ -1,0 +1,51 @@
+# Cygnus-Ubuntu SDDM Theme - Tokyo Night
+# For use with simple_sddm_2 theme
+#
+# Tokyo Night Color Palette:
+# bg:      #1a1b26
+# fg:      #c0caf5
+# blue:    #7aa2f7
+# purple:  #bb9af7
+# cyan:    #7dcfff
+# green:   #9ece6a
+# yellow:  #e0af68
+# red:     #f7768e
+# dark:    #414868
+# comment: #565f89
+
+[General]
+Background="Backgrounds/default"
+ScaleImageCropped=true
+ScreenWidth=1920
+ScreenHeight=1080
+
+# Tokyo Night themed colors
+HeaderTextColor="#c0caf5"
+DateTextColor="#c0caf5"
+TimeTextColor="#7aa2f7"
+
+# Dropdown/Selection
+DropdownBackgroundColor="#1a1b26"
+DropdownSelectedBackgroundColor="#7aa2f7"
+
+# System buttons
+SystemButtonsIconsColor="#bb9af7"
+
+# Session
+SessionButtonTextColor="#c0caf5"
+
+# Virtual keyboard
+VirtualKeyboardButtonTextColor="#c0caf5"
+
+# Highlight
+HighlightBackgroundColor="#7aa2f7"
+HighlightTextColor="#1a1b26"
+
+# Login/Password fields
+LoginFieldTextColor="#c0caf5"
+PasswordFieldTextColor="#c0caf5"
+PlaceholderTextColor="#565f89"
+
+# Icons
+UserIconColor="#bb9af7"
+PasswordIconColor="#7aa2f7"

@@ -122,6 +122,9 @@ show_menu() {
     print_color "$YELLOW" "║  S)  Setup Symlinks Only                                 ║"
     print_color "$YELLOW" "║  W)  Setup Wallpapers                                    ║"
     print_color "$YELLOW" "║  D)  Restore dconf Settings                              ║"
+    print_color "$YELLOW" "║  G)  GDM Tokyo Night Theme (Login Screen)               ║"
+    print_color "$CYAN" "║                                                          ║"
+    print_color "$BLUE" "║  V)  Validate Dotfiles (compare with system)            ║"
     print_color "$CYAN" "║                                                          ║"
     print_color "$RED" "║  Q)  Quit                                                ║"
     print_color "$CYAN" "║                                                          ║"
@@ -157,6 +160,9 @@ install_all() {
     # Restore dconf settings
     bash "$SCRIPTS_DIR/restore-dconf.sh"
 
+    # Setup GDM Tokyo Night theme
+    setup_gdm_theme
+
     print_header "Installation Complete!"
     print_success "All components have been installed."
     print_info "Please log out and log back in, or reboot your system."
@@ -185,6 +191,33 @@ setup_wallpapers() {
         fi
     else
         print_warning "Wallpapers directory not found: $wallpaper_src"
+    fi
+}
+
+# Setup GDM Tokyo Night theme
+setup_gdm_theme() {
+    print_header "Setting up GDM Tokyo Night Theme"
+
+    local gdm_script="$HOME/.config/hypr/scripts/gdm_tokyonight_theme.sh"
+
+    if [[ ! -f "$gdm_script" ]]; then
+        print_warning "GDM theme script not found. Symlinks may not be set up yet."
+        print_info "Run 'S) Setup Symlinks' first, then try again."
+        return 1
+    fi
+
+    print_info "This will apply Tokyo Night theme to your GDM login screen."
+    print_info "Requires sudo access."
+    print_warning "Apply GDM Tokyo Night theme? [y/N]"
+    read -n 1 -r
+    echo
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        sudo bash "$gdm_script"
+        print_success "GDM Tokyo Night theme applied!"
+        print_info "Changes will take effect on next login/reboot."
+    else
+        print_info "Skipped GDM theme setup."
     fi
 }
 
@@ -248,6 +281,14 @@ main() {
                 ;;
             [Dd])
                 execute_script "restore-dconf.sh"
+                read -p "Press Enter to continue..."
+                ;;
+            [Gg])
+                setup_gdm_theme
+                read -p "Press Enter to continue..."
+                ;;
+            [Vv])
+                bash "$SCRIPT_DIR/validate.sh"
                 read -p "Press Enter to continue..."
                 ;;
             [Qq])
