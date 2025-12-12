@@ -44,9 +44,11 @@ This project is built upon the work of these amazing projects:
 - **mise** - Polyglot runtime manager
 
 ### Theming
+- **Flat-Remix GTK** - GTK theme (Blue Dark)
+- **Flat-Remix Icons** - Icon theme
+- **Bibata Cursors** - Modern cursor theme
 - **Kvantum** - Qt theme engine
 - **qt5ct/qt6ct** - Qt configuration
-- **GTK themes** - Catppuccin variants
 - **Wallust** - Colorscheme generation
 
 ### Utilities
@@ -94,8 +96,10 @@ The installer provides a menu with the following options:
 | **7** | NVIDIA Drivers |
 | **8** | Applications |
 | **9** | Claude Code CLI |
+| **T** | GTK/Icon/Cursor Themes |
 | **S** | Setup Symlinks Only |
 | **W** | Setup Wallpapers |
+| **D** | Restore dconf Settings |
 
 ### Symlinks Only
 
@@ -117,6 +121,7 @@ cygnus-ubuntu/
 │   ├── btop/           # System monitor config
 │   ├── cava/           # Audio visualizer config
 │   ├── fastfetch/      # System info config
+│   ├── dconf/          # GNOME/GTK settings backup
 │   ├── gtk-3.0/        # GTK3 settings
 │   ├── hypr/           # Hyprland configuration
 │   │   ├── configs/    # Modular config files
@@ -141,7 +146,12 @@ cygnus-ubuntu/
 │   ├── install-hyprland.sh
 │   ├── install-nvidia.sh
 │   ├── install-nvim.sh
-│   └── install-shell.sh
+│   ├── install-shell.sh
+│   ├── install-themes.sh
+│   └── restore-dconf.sh
+├── test/               # Testing tools
+│   ├── Dockerfile
+│   └── docker-test.sh
 ├── wallpapers/         # Default wallpapers
 ├── current/            # Current state (wallpaper, etc.)
 ├── install.sh          # Main installer

@@ -1,0 +1,31 @@
+# Logs
+*.log
+*.log.*
+
+# Caches
+*.cache
+__pycache__/
+.cache/
+
+# Nvim state
+dotfiles/nvim/.luarc.json
+dotfiles/nvim/lazy-lock.json
+
+# Local overrides
+*.local
+*.local.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup directories
+*-backup-*/
+cygnus-ubuntu-backups/
+
+# Current state (generated)
+current/
+
+# Test artifacts
+test/*.tar
+test/*.img

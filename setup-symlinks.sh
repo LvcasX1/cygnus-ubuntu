@@ -170,10 +170,22 @@ if [[ -d "$DOTFILES_DIR/qt5ct" ]]; then
     create_symlink "$DOTFILES_DIR/qt5ct" "$HOME/.config/qt5ct"
 fi
 
+# Qt6ct configuration
+if [[ -d "$DOTFILES_DIR/qt6ct" ]]; then
+    print_info "Setting up Qt6ct configuration..."
+    create_symlink "$DOTFILES_DIR/qt6ct" "$HOME/.config/qt6ct"
+fi
+
 # Kvantum configuration
 if [[ -d "$DOTFILES_DIR/Kvantum" ]]; then
     print_info "Setting up Kvantum configuration..."
     create_symlink "$DOTFILES_DIR/Kvantum" "$HOME/.config/Kvantum"
+fi
+
+# Wallust configuration
+if [[ -d "$DOTFILES_DIR/wallust" ]]; then
+    print_info "Setting up Wallust configuration..."
+    create_symlink "$DOTFILES_DIR/wallust" "$HOME/.config/wallust"
 fi
 
 echo ""

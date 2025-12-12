@@ -117,9 +117,11 @@ show_menu() {
     print_color "$CYAN" "║  7)  NVIDIA Drivers                                      ║"
     print_color "$CYAN" "║  8)  Applications                                        ║"
     print_color "$CYAN" "║  9)  Claude Code CLI                                     ║"
+    print_color "$CYAN" "║  T)  GTK/Icon/Cursor Themes                              ║"
     print_color "$CYAN" "║                                                          ║"
     print_color "$YELLOW" "║  S)  Setup Symlinks Only                                 ║"
     print_color "$YELLOW" "║  W)  Setup Wallpapers                                    ║"
+    print_color "$YELLOW" "║  D)  Restore dconf Settings                              ║"
     print_color "$CYAN" "║                                                          ║"
     print_color "$RED" "║  Q)  Quit                                                ║"
     print_color "$CYAN" "║                                                          ║"
@@ -142,6 +144,7 @@ install_all() {
     execute_script "install-hyprland.sh"
     execute_script "install-shell.sh"
     execute_script "install-nvim.sh"
+    execute_script "install-themes.sh"
     execute_script "install-nvidia.sh"
     execute_script "install-asus.sh"
     execute_script "install-apps.sh"
@@ -150,6 +153,9 @@ install_all() {
     # Setup symlinks and wallpapers
     bash "$SCRIPT_DIR/setup-symlinks.sh"
     setup_wallpapers
+
+    # Restore dconf settings
+    bash "$SCRIPTS_DIR/restore-dconf.sh"
 
     print_header "Installation Complete!"
     print_success "All components have been installed."
@@ -228,12 +234,20 @@ main() {
                 execute_script "install-claude.sh"
                 read -p "Press Enter to continue..."
                 ;;
+            [Tt])
+                execute_script "install-themes.sh"
+                read -p "Press Enter to continue..."
+                ;;
             [Ss])
                 bash "$SCRIPT_DIR/setup-symlinks.sh"
                 read -p "Press Enter to continue..."
                 ;;
             [Ww])
                 setup_wallpapers
+                read -p "Press Enter to continue..."
+                ;;
+            [Dd])
+                execute_script "restore-dconf.sh"
                 read -p "Press Enter to continue..."
                 ;;
             [Qq])
