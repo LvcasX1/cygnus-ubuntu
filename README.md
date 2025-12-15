@@ -80,7 +80,7 @@ This project is built upon the work of these amazing projects:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/cygnus-ubuntu.git ~/.config/cygnus-ubuntu
+git clone https://github.com/LvcasX1/cygnus-ubuntu.git ~/.config/cygnus-ubuntu
 
 # Run the installer
 cd ~/.config/cygnus-ubuntu
